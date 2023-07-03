@@ -23,6 +23,13 @@ Les fichiers geojson créés en sortie (un par département) nécessitent donc u
 ## La méthode :
 **En résumé, il s'agit ici de poser les adresses sur une carte puis à dessiner une limite autour de chaque groupe d’adresses appartenant au même bureau de vote.**
 
+Voici les opérations exécutées successivement dans le notebook "Perimetres_BV_REU_Etalab_2022.ipynb" :
+- Chargement de l'extrait anonymisé du REU (un fichier csv contenant près de 16 millions de lignes, une par adresse)
+- Sélection des 28 229 adresses comprises dans des communes qui ne comprennent qu'un seul bureau de vote : les limites du bureau seront donc celles de la commune...
+- On ne conserve que les adresses des 6 762 communes qui comprennent au moins deux bureaux. ce qui représente quand même 11,3 millions de lignes.
+- Suppression des erreurs de géolocalisation ou anomalies des listes électorales : 171 201 points, situés dans 6 136 communes différentes,qui géolocalisent les adresses d'électeurs de plusieurs bureaux de vote distinct, ainsi que 40 points identiques issus de communes différentes. Cela correspond à 365 151 lignes d'adresses, donc seulement 0,03% des lignes du fichiers des communes à plusieurs bureaux de vote.
+
+- 
 Le principe des diagrammes de vornonoï permet d’envigager ce travail de manière automatique avec un programme en python, en javascript ou en R. Dans ce dépôt, vous trouverez un notebook Jupyter, qui fait appel aux librairies Pandas et Geopandas, ainsi qu'un fichier "makefile" qui permet d'exécuter des commandes Mapshaper. Cela implique d'installer au préalableMapshaper en ligne de commande, une librairie javascript que je trouve plus efficace pour certaines opérations, qui tourne sous MacOSX, Linux et Windows.
 
 
