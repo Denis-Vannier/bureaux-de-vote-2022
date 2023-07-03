@@ -1,6 +1,6 @@
 ### Tracer les périmètres des bureaux de vote à partir des adresses des électeurs 
-- Traitement de l'extrait anonymisé du Répertoire électoral unique, publié par l'Insee (version 27/06/2023)
-https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/
+- Traitement de l'extrait anonymisé du Répertoire électoral unique, [publié](https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/) par l'Insee (version 27/06/2023)
+
 
 <img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/APPERCU_BV.png" width="1000" />
 
@@ -10,7 +10,7 @@ Je propose ici une méthode pour obtenir un premier découpage “acceptable”.
 
 Les choix techniques visent donc d’abord à limiter le nombre d’erreurs et à obtenir un découpage exploitable en visualisation de données, pour ainsi “s’approcher” d’une réalité électorale.
 
-La méthode que j’utilise ici est inspirée des traitements réalisés par l’équipe de Cartelec, et par ceux de Joël Gombin, Christian Quest, ou encore [Grégory Gibelin]("https://makina-corpus.com/sig-webmapping/une-approche-de-reconstruction-automatique-de-la-geometrie-des-bureaux-de-vote"), avec quelques conseils experts de Thomas Gratier.
+La méthode que j’utilise ici est inspirée des traitements réalisés par l’équipe de Cartelec, et par ceux de Joël Gombin, Christian Quest, ou encore [Grégory Gibelin](https://makina-corpus.com/sig-webmapping/une-approche-de-reconstruction-automatique-de-la-geometrie-des-bureaux-de-vote), avec quelques conseils experts de Thomas Gratier.
 
 La version intégrale du REU contient l’identité (nom, prénom, date et lieu de naissance, nationalité) et l’adresse postale des 48,7 millions d’habitants inscrits sur les listes électorales. Il est alimenté par les communes. Lorsqu’une commune accueille plus d’un millier d’électeurs, il est prévu de les répartir entre plusieurs bureaux de vote, afin de faciliter les opérations électorales. Depuis 2016, cette répartition doit être réalisée selon des critères géographiques (un principé précisé dans une circulaire de 2017 (lien). Les maires de chaque commune doivent donc définir un périmètre géographique pour chacun des bureaux. 
 
