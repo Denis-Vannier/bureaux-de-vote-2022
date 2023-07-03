@@ -23,7 +23,7 @@ Les choix techniques visent donc d’abord à limiter le nombre d’erreurs et �
 ## La méthode :
 **En résumé, il s'agit ici de poser les adresses sur une carte puis à dessiner une limite autour de chaque groupe d’adresses appartenant au même bureau de vote.**
 
-Dans ce dépôt, vous trouverez un notebook Jupyter, qui fait appel aux librairies Pandas et Geopandas, ainsi qu'un fichier "makefile" qui permet d'exécuter des commandes Mapshaper. Cela implique d'installer au préalableMapshaper en ligne de commande, une librairie javascript que je trouve plus efficace pour certaines opérations, qui tourne sous MacOSX, Linux et Windows.
+Dans ce dépôt, vous trouverez un notebook Jupyter, qui fait appel aux librairies [Pandas](https://pandas.pydata.org/), [Geopandas](https://geopandas.org/en/stable/), [Geovoronoi](https://github.com/WZBSocialScienceCenter/geovoronoi), ainsi qu'un fichier "makefile" qui permet d'exécuter des commandes Mapshaper. Cela implique d'installer au préalableMapshaper en ligne de commande, une librairie javascript que je trouve plus efficace pour certaines opérations, qui tourne sous MacOSX, Linux et Windows.
 
 Voici les opérations exécutées successivement dans le notebook "Perimetres_BV_REU_Etalab_2022.ipynb" :
 - Chargement de l'extrait anonymisé du REU (un fichier csv contenant près de 16 millions de lignes, une par adresse)
@@ -33,7 +33,7 @@ Voici les opérations exécutées successivement dans le notebook "Perimetres_BV
 - Mais cette opération crée des erreurs à la marge, en supprimant des points d'adresses de bureaux de vote entier dans les petites communes, ce qui bloque l'étape de découpage des communes.
 On commence donc par identifier les 18 communes comprenant plusieurs bureaux de vote en théorie, mais avec un seul bureau dans les données, et 8 autres qui ont généré des erreurs lors des premiers essais de traitements puis on exporte l'ensemble des adresses associées pour tenter ultérierement un découpage en "visuel" dans Qgis. (*Codes Insee : '05063', '06074', '07230', '09123', '10112', '13061', '24515', '2A070', '2A163', '2B147', '2B229', '2B283', '2B311', '38364', '42272', '55500', '86134', '97301', '97502', '30045', '2A141', '13118', '13002', '13051', '13052', '13119'*)
 - On identifie également les 35 communes dont le nombre de bureaux de vote présents dans les données est inférieur au nombre théorique (il peut s'agir de bureaux "complémentaires", réunissant des électeurs qui n'ont pas de domicile dans la commune, donc sans périmètre géographique, mais on liste quand même ces communes pour vérifier par la suite)
-- 
+- Afin de réaliser le découpage des bureaux dans les limites administratives des communes, on utilise la base [AdminExpress](https://geoservices.ign.fr/adminexpress) de l'IGN (version juin 2022) : la couche des communes mais aussi celle des arrondissements municipaux pour Paris, Lyon et Marseille.
 
 
 Le principe des diagrammes de vornonoï permet d’envisager ce travail de manière automatique avec un programme en python, en javascript ou en R. 
@@ -52,7 +52,11 @@ La mise à disposition du public de cette base de données doit beaucoup à [Jo�
 
 Car, en effet, n’importe quel électeur peut obtenir copie de ce document sensible, sous des conditions strictes de confidentialité et d’utilisation non-commerciale. C’est la voie que j’ai fini par suivre, début 2022, en demandant des copies des listes électorales intégrales dans une quarantaine de départements. Outre la difficulté d’identifer les interlocuteurs directs dans chaque préfecture, cela impliquait de solliciter des services très chargés à l’approche du scrutin. C’était aussi se soumettre à des interprétations très variables du code électoral : le plus souvent, les réponses des préfectures étaient justes et prudentes, mais dans quelques cas, des listes électorales m’ont été transmises par des fonctionnaires avec une légèreté inquiétante s’agissant de données aussi sensibles. Sans compter les cas inévitables de mauvaise volonté manifeste ou d’obstruction de principe mal inspirée. 
 
-Bref, ce sont ces listes électorales complètes qui m’ont permis de cartographier l’ensemble des bureaux de votes des aires d’attraction de Nantes, Lille, Lyon, Toulouse et Bordeaux. Un travail alors inédit à cette échelle des aires d’attraction. Je les ai [publiés dans Médiacités] quelques semaines après le second tour des présidentielles, et transmis aux chercheurs qui m’en faisaient la demande. 
+Bref, ce sont ces listes électorales complètes qui m’ont permis de cartographier, il y a un an, l’ensemble des bureaux de votes des aires d’attraction de Nantes, Lille, Lyon, Toulouse et Bordeaux. Le résultat a été publié dans Médiacités quelques semaines après le second tour des présidentielles, et transmis aux chercheurs qui m’en faisaient la demande. Un travail alors inédit à cette échelle des aires d’attraction :
+- [Raz‐de‐marée électoraux, reports de voix au second tour : trois cartes pour mieux comprendre les législatives 2022 à Toulouse](https://www.mediacites.fr/decryptage/toulouse/2022/07/11/raz-de-maree-electoraux-reports-de-voix-au-second-tour-trois-cartes-pour-mieux-comprendre-les-legislatives-2022-a-toulouse/)
+- [Législatives en Loire‐Atlantique : un vote polarisé à Nantes et dans la métropole](https://www.mediacites.fr/breve/nantes/2022/07/07/legislatives-en-loire-atlantique-un-vote-polarise-a-nantes-et-dans-la-metropole/)
+- [Après les législatives, la nouvelle carte politique de la métropole de Lyon](https://www.mediacites.fr/breve/lyon/2022/07/04/carte-interactive-apres-les-legislatives-la-nouvelle-carte-politique-de-la-metropole-de-lyon/)
+- [Législatives : nos cartes interactives des résultats dans les bureaux de vote de la MEL](https://www.mediacites.fr/decryptage/lille/2022/06/30/legislatives-nos-cartes-interactives-des-resultats-dans-les-bureaux-de-vote-de-la-mel/)
 
 
 
