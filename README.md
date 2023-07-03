@@ -15,13 +15,15 @@ La version intégrale du Répertoire électoral unique contient l’identité (n
 
 Les plus grandes communes, les plus en avance sur la démarche de données ouvertes et qui disposent d’un service géomatique, ont mis en ligne des fichiers géograqhiques qui permettent de cartographier facilement ces bureaux. Mais l’immense majorité des cas, le périmètre sont décrits sous forme de texte, avec une simple succession d’adresses, voire par un simple tracé au crayon sur un plan en papier. Les listes électorales offrent donc la meilleure meilleure option si l’on veut visualiser ces périmètres. 
 
-## Pourquoi ce n'est pas suffisant :
-Dans la pratique, ce n’est pas aussi magique. Parfois, des électeurs sont rattachés à un autre bureau de vote que celui correspondant à leur domicile. Il arrive même que des communes conservent des bureaux de vote répartis sur une base alphabétique malgré la réforme de 2016 (c’était encore le cas de Fonsorbes, en Haute-Garonne, à la veille de la présidentielle). Ces cas sont marginaux, mais suffisants pour mettre la pagaille dans un programme. Dans ces conditions, le plus raisonnable est d’admettre qu’on ne pourra pas obtenir un fond de carte aussi rigoureux et exhaustif qu’un découpage communal, ou par Iris, définis et centralisés par l’IGN ou l’Insee. 
+## Pourquoi c'est pas magique:
+Les fichiers geojson créés en sortie (un par département) nécessitent malgré tout une intervention au cas par cas dans un logiciel comme [Qgis](https://www.qgis.org/fr/site/). Car le résultat est souvent chaotique lorsqu'on zoome sur les limites de bureaux de vote. Le découpage [proposé par Etalab](https://files.data.gouv.fr/reu/index-reu.html#12.86/47.9042/1.92282), impose d’ailleurs les mêmes corrections a posteriori. Cette limite s’explique principalement par les conditions de production des listes électorales dans chacune des 35 000 communes, et dans une moindre mesure par les erreurs de géolocalisation des adresses. Parfois, des électeurs sont rattachés à un autre bureau de vote que celui correspondant à leur domicile. Il arrive  que des communes conservent des bureaux de vote répartis sur une base alphabétique malgré la réforme de 2016 (c’était encore le cas de Fonsorbes, en Haute-Garonne, à la veille de la présidentielle). Ces cas sont marginaux, mais suffisants pour mettre la pagaille dans un programme. 
 
-Les fichiers geojson créés en sortie (un par département) nécessitent donc une intervention au cas par cas dans un logiciel comme [Qgis](https://www.qgis.org/fr/site/). Le découpage [proposé par Etalab](https://files.data.gouv.fr/reu/index-reu.html#12.86/47.9042/1.92282), impose d’ailleurs les mêmes corrections a posteriori. Cette limite s’explique principalement par les conditions de production des listes électorales dans chacune des 35 000 communes, et dans une moindre mesure par les erreurs de géolocalisation des adresses. Les choix techniques visent donc d’abord à limiter le nombre d’erreurs et à obtenir un découpage exploitable en visualisation de données, pour ainsi “s’approcher” d’une réalité électorale. Après tout, on ne peut pas exiger de ce découpage ce que l’on attend des Iris : il n’a pas été pensé pour faciliter des études de sociologie mais pour fluidifier le déroulement d’un scrutin électoral.
+Les choix techniques visent donc d’abord à limiter le nombre d’erreurs et à obtenir un découpage exploitable en visualisation de données, pour ainsi “s’approcher” d’une réalité électorale. Après tout, on ne peut pas exiger de ce découpage ce que l’on attend des Iris : il n’a pas été pensé pour faciliter des études de sociologie mais pour fluidifier le déroulement d’un scrutin électoral. Dans ces conditions, le plus raisonnable est d’admettre qu’on ne pourra pas obtenir un fond de carte aussi rigoureux et exhaustif qu’un découpage communal, ou par Iris, définis et centralisés par l’IGN ou l’Insee.
 
 ## La méthode :
 **En résumé, il s'agit ici de poser les adresses sur une carte puis à dessiner une limite autour de chaque groupe d’adresses appartenant au même bureau de vote.**
+
+Dans ce dépôt, vous trouverez un notebook Jupyter, qui fait appel aux librairies Pandas et Geopandas, ainsi qu'un fichier "makefile" qui permet d'exécuter des commandes Mapshaper. Cela implique d'installer au préalableMapshaper en ligne de commande, une librairie javascript que je trouve plus efficace pour certaines opérations, qui tourne sous MacOSX, Linux et Windows.
 
 Voici les opérations exécutées successivement dans le notebook "Perimetres_BV_REU_Etalab_2022.ipynb" :
 - Chargement de l'extrait anonymisé du REU (un fichier csv contenant près de 16 millions de lignes, une par adresse)
@@ -34,7 +36,7 @@ On commence donc par identifier les 18 communes comprenant plusieurs bureaux de 
 - 
 
 
-Le principe des diagrammes de vornonoï permet d’envisager ce travail de manière automatique avec un programme en python, en javascript ou en R. Dans ce dépôt, vous trouverez un notebook Jupyter, qui fait appel aux librairies Pandas et Geopandas, ainsi qu'un fichier "makefile" qui permet d'exécuter des commandes Mapshaper. Cela implique d'installer au préalableMapshaper en ligne de commande, une librairie javascript que je trouve plus efficace pour certaines opérations, qui tourne sous MacOSX, Linux et Windows.
+Le principe des diagrammes de vornonoï permet d’envisager ce travail de manière automatique avec un programme en python, en javascript ou en R. 
 
 
 
