@@ -5,9 +5,7 @@
 
 <img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/APPERCU_BV.png" width="1000" />
 
-#### L’Insee vient de rendre public un [extrait du Répertoire électoral unique (REU)](https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/) de l’ensemble du territoire français, daté de septembre 2022. Son objectif est ici de déduire le périmètre de plus de 69 000 bureaux de vote, pour lequels il n’existe à ce jour aucun fond de carte exhaustif et exploitable en visualisation de données électorales.
-
-**Je propose ici une méthode pour obtenir un premier découpage “acceptable”. **
+### L’Insee vient de rendre public un [extrait du Répertoire électoral unique (REU)](https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/) de l’ensemble du territoire français, daté de septembre 2022. Son objectif est ici de déduire le périmètre de plus de 69 000 bureaux de vote, pour lequels il n’existe à ce jour aucun fond de carte exhaustif et exploitable en visualisation de données électorales. Je propose ici une méthode pour obtenir un premier découpage “acceptable”.
 
 ## Sources :
 La méthode que j’utilise ici est inspirée des traitements réalisés par l’équipe de [Cartelec](http://cartelec.univ-rouen.fr/), et par ceux exploré lors d'un [Datacamp CadElect](https://www.etalab.gouv.fr/datacamp-cadelect/) en 2016, auquel avaient participé notamment [Joël Gombin](https://www.linkedin.com/in/jgombin/?originalSubdomain=fr), [Christian Quest](https://github.com/cquest), ou encore [Grégory Gibelin](https://makina-corpus.com/sig-webmapping/une-approche-de-reconstruction-automatique-de-la-geometrie-des-bureaux-de-vote), avec quelques conseils experts de Thomas Gratier.
