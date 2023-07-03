@@ -5,7 +5,7 @@
 
 <img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/APPERCU_BV.png" width="1000" />
 
-#### L’Insee vient de rendre public un [extrait du Répertoire électoral unique (REU)](https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/) de l’ensemble du territoire français, daté de septembre 2022. Son objectif est ici de déduire le périmètre des ??? bureaux de vote, pour lequels il n’existe à ce jour aucun fond de carte exhaustif et exploitable en visualisation de données électorales.
+#### L’Insee vient de rendre public un [extrait du Répertoire électoral unique (REU)](https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/) de l’ensemble du territoire français, daté de septembre 2022. Son objectif est ici de déduire le périmètre de plus de 69 000 bureaux de vote, pour lequels il n’existe à ce jour aucun fond de carte exhaustif et exploitable en visualisation de données électorales.
 
 **Je propose ici une méthode pour obtenir un premier découpage “acceptable”. Le résultat obtenu nécessite toutefois une intervention au cas par cas dans un logiciel comme Qgis. Le [découpage proposé par Etalab](https://files.data.gouv.fr/reu/index-reu.html#12.86/47.9042/1.92282), impose d’ailleurs les mêmes corrections a posteriori. Cette limite s’explique principalement par les conditions de production des listes électorales dans chacune des 35 000 communes, et dans une moindre mesure par les erreurs de géolocalisation des adresses. Les choix techniques visent donc d’abord à limiter le nombre d’erreurs et à obtenir un découpage exploitable en visualisation de données, pour ainsi “s’approcher” d’une réalité électorale.**
 
