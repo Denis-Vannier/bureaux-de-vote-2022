@@ -2,6 +2,7 @@
 - Traitement de l'extrait anonymisé du Répertoire électoral unique, publié par l'Insee (version 27/06/2023)
 https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/
 
+<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/APPERCU_BV.png" width="800" />
 
 L’Insee vient de rendre public un extrait du Répertoire électoral unique (REU) de l’ensemble du territoire français, daté de 2022. Son objectif est ici de déduire le périmètre des ??? bureaux de vote, pour lequels il n’existe à ce jour aucun fond de carte exhaustif et exploitable en visualisation de données électorales.
 
