@@ -40,8 +40,8 @@ On commence donc par identifier les 18 communes comprenant plusieurs bureaux de 
 - Il s'agira ensuite de tracer autour de chaque point d'adresse des [diagrammes de voronoï](https://www.sigterritoires.fr/index.php/analyse-exploratoire-des-donnees-pour-la-geostatistiqueles-diagrammes-de-voronoi/). Une opération qui nécessite de modifier les coordonnées géographique en passant dans un système de projection "world mercator" (epsg:3395).
 - Les données sont traitées en boucle par départements, afin d'obtenir des fichiers de sorties plus facile à manipuler, et ménager son ordinateur... J'ai également choisi d'exporter des fichiers aux étapes intermédiaires, afin de faciliter les vérifications ultérieures
 - Chaque fichier départemental est enfin traité avec Mapshaper, en exécutant le fichier makefile : fusion des diagrames de vonooi par bureaux de vote, simplification des contours à 15%, suppression des îlots sde moins de 0,005km2. Cette dernière opération peut produire des vides en bordures de certains bureaux de vote, et va donc être revue.
-- Avant d'exporter le fichier geojson de chaque département, on ajoute bien sûr les contours des communes qui ne comprennnent qu'un seul bureau de vote.
-
+- Avant d'exporter le fichier geojson de chaque département, on ajoute bien sûr les contours des communes qui ne comprennent qu'un seul bureau de vote.
+- Le fichier "Bvote_Propre_Dep_14.geojson" peut être visualisé rapidement avec l'application en ligne [Kepler.gl](https://kepler.gl/demo). 
 - L'étape ultime (la plus fastidieuse), consiste à ouvrir chaque fichier geojson dans Qgis pour corriger visuellement les aberrations dans les découpages
 
 
