@@ -32,7 +32,7 @@ Les choix techniques visent donc d’abord à **limiter le nombre d’erreurs et
 
 <img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/IMG/Etapes_Traitement_REU.png" width="1000" />
 
-Dans ce dépôt, vous trouverez un notebook Jupyter, qui fait appel aux librairies [Pandas](https://pandas.pydata.org/), [Geopandas](https://geopandas.org/en/stable/), [Geovoronoi](https://github.com/WZBSocialScienceCenter/geovoronoi), ainsi qu'un fichier "makefile" qui permet d'exécuter des commandes Mapshaper. Cela implique d'installer au préalable [Mapshaper](https://github.com/mbloch/mapshaper/tree/master) en ligne de commande, une librairie javascript que je trouve plus efficace pour certaines opérations.
+Dans ce dépôt, vous trouverez un notebook Jupyter, qui fait appel aux librairies [Pandas](https://pandas.pydata.org/), [Geopandas](https://geopandas.org/en/stable/), [Geovoronoi](https://github.com/WZBSocialScienceCenter/geovoronoi), ainsi qu'un fichier "[makefile](https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/makefile)" qui permet d'exécuter des commandes Mapshaper. Cela implique d'installer au préalable [Mapshaper](https://github.com/mbloch/mapshaper/tree/master) en ligne de commande, une librairie javascript que je trouve plus efficace pour certaines opérations.
 
 Voici les opérations exécutées successivement dans le notebook [Perimetres_BV_REU_Etalab_2022.ipynb](https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/Perimetres_BV_REU_Etalab_2022.ipynb) :
 - Chargement de l'extrait anonymisé du REU (un fichier csv contenant près de 16 millions de lignes, une par adresse)
