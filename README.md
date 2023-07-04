@@ -25,7 +25,7 @@ Les fichiers geojson créés en sortie (un par département) nécessitent malgr�
 <img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/Exemple_Traitement_Etalab.png" width="1000" />
 
 
-Les choix techniques visent donc d’abord à **limiter le nombre d’erreurs et à obtenir un découpage exploitable en visualisation de données**, pour ainsi “s’approcher” d’une réalité électorale. Après tout, il ne faut pas trop exiger d'un découpage qui a été pensé pour fluidifier le déroulement d’un scrutin électoral et non pour permettre des études de sociologie électorale. N'attendons pas un fond de carte aussi rigoureux et exhaustif que ceux que ceux auxquels nous ont habitué l’IGN et l’Insee. On notera d'ailleurs que l'un comme l'autre ne s'y est pas encore risqué.
+Les choix techniques visent donc d’abord à **limiter le nombre d’erreurs et à obtenir un découpage exploitable en visualisation de données**, pour ainsi “s’approcher” d’une réalité électorale. Après tout, il ne faut pas trop exiger d'un découpage qui a été pensé pour fluidifier le déroulement d’un scrutin électoral et pas pour faire de la sociologie électorale. 
 
 ## La méthode :
 **En résumé, il s'agit ici de poser les adresses sur une carte puis à dessiner une limite autour de chaque groupe d’adresses appartenant au même bureau de vote.**
@@ -47,8 +47,10 @@ On commence donc par identifier les 18 communes comprenant plusieurs bureaux de 
 - Les données sont traitées en boucle par départements, afin d'obtenir des fichiers de sorties plus facile à manipuler, et ménager son ordinateur... J'ai également choisi d'exporter des fichiers aux étapes intermédiaires, afin de faciliter les vérifications ultérieures
 - Chaque fichier départemental est enfin traité avec Mapshaper, en exécutant le fichier makefile : fusion des diagrames de vonooi par bureaux de vote, simplification des contours à 15%, suppression des îlots sde moins de 0,005km2. Cette dernière opération peut produire des vides en bordures de certains bureaux de vote, et va donc être revue.
 - Avant d'exporter le fichier geojson de chaque département, on ajoute bien sûr les contours des communes qui ne comprennent qu'un seul bureau de vote.
-- Le fichier "Bvote_Propre_Dep_14.geojson" peut être visualisé rapidement avec l'application en ligne [Kepler.gl](https://kepler.gl/demo). 
-- L'étape ultime (la plus fastidieuse), consiste à ouvrir chaque fichier geojson dans Qgis pour corriger visuellement les aberrations dans les découpages
+
+  Le fichier "Bvote_Propre_Dep_14.geojson" peut être visualisé rapidement avec l'application en ligne [Kepler.gl](https://kepler.gl/demo). 
+
+  L'étape ultime (la plus fastidieuse), consiste à ouvrir chaque fichier geojson dans Qgis pour corriger visuellement les aberrations dans les découpages
 
 
 ## Pour aller plus loin :
