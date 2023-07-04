@@ -75,6 +75,6 @@ Bref, ce sont ces listes électorales complètes qui m’ont permis de **cartogr
 
 
 
-<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/Carte_Legislatives_BV_Lyon.png" width="1000" />
+<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/Carte_Legislatives_BV_Lyon.png" width="700" />
 
 
