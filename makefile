@@ -8,6 +8,3 @@ simplifier:
 
 clean:
 	-rm Export_Voronoi/*.geojson
-
-
-# Todo : -filter-slivers min-area="0.005km2"
