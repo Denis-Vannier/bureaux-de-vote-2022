@@ -24,6 +24,8 @@ Les choix techniques visent donc d’abord à **limiter le nombre d’erreurs et
 ## La méthode :
 **En résumé, il s'agit ici de poser les adresses sur une carte puis à dessiner une limite autour de chaque groupe d’adresses appartenant au même bureau de vote.**
 
+<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/Etapes_BV_REU.png" width="1000" />
+
 Dans ce dépôt, vous trouverez un notebook Jupyter, qui fait appel aux librairies [Pandas](https://pandas.pydata.org/), [Geopandas](https://geopandas.org/en/stable/), [Geovoronoi](https://github.com/WZBSocialScienceCenter/geovoronoi), ainsi qu'un fichier "makefile" qui permet d'exécuter des commandes Mapshaper. Cela implique d'installer au préalable [Mapshaper](https://github.com/mbloch/mapshaper/tree/master) en ligne de commande, une librairie javascript que je trouve plus efficace pour certaines opérations.
 
 Voici les opérations exécutées successivement dans le notebook "Perimetres_BV_REU_Etalab_2022.ipynb" :
