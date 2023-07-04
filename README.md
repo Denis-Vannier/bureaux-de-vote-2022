@@ -3,7 +3,7 @@
 ### Traitement de l'extrait anonymisé du Répertoire électoral unique, [publié](https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/) par l'Insee (version 27/06/2023)
 
 
-<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/APPERCU_BV.png" width="1000" />
+<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/IMG/Appercu_BV.png" width="1000" />
 
 ### L’Insee vient de rendre public un [extrait du Répertoire électoral unique (REU)](https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/) de l’ensemble du territoire français, daté de septembre 2022. Je publie ici une première version d'un traitement qui permet d'en déduire les périmètres de plus de 69 000 bureaux de vote. Cette méthode produit un premier découpage “acceptable” sous forme de fichiers geojson départementaux.
 
@@ -16,13 +16,13 @@ Avertissement : Le code est à l'image de mon niveau encore limité en python. T
 La version intégrale du Répertoire électoral unique contient l’identité (nom, prénom, date et lieu de naissance, nationalité) et l’adresse postale des 48,7 millions d’habitants inscrits sur les listes électorales. Il est alimenté par les communes. Lorsqu’une commune accueille plus d’un millier d’électeurs, il est prévu de les répartir entre plusieurs bureaux de vote, afin de faciliter les opérations électorales. Depuis 2016, cette répartition doit être réalisée selon des critères géographiques. Les maires de chaque commune doivent donc définir un périmètre géographique pour chacun des bureaux. 
 
 Les plus grandes communes, les plus en avance sur la démarche de données ouvertes, qui disposent d’un service géomatique, ont mis en ligne des fichiers géograqhiques qui permettent de cartographier facilement ces bureaux. Mais l’immense majorité des cas, le périmètre sont décrits sous forme de texte, avec une simple succession d’adresses, voire par un simple tracé au crayon sur un plan en papier. Les listes électorales offrent donc la meilleure meilleure option si l’on veut visualiser ces périmètres. 
-<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/Exemples_Plans_BV_Mairies.png" width="1000" />
+<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/IMG/Exemples_Plans_BV_Mairies.png" width="1000" />
 
 
 ## Pourquoi ce n'est pas aussi magique
 Les fichiers geojson créés en sortie (un par département) nécessitent malgré tout une intervention au cas par cas dans un logiciel comme [Qgis](https://www.qgis.org/fr/site/). Car **le résultat est souvent chaotique lorsqu'on zoome sur les limites de bureaux de vote**. Le découpage [proposé par Etalab](https://files.data.gouv.fr/reu/index-reu.html#12.86/47.9042/1.92282), impose d’ailleurs les mêmes corrections a posteriori. Cette limite s’explique principalement par les conditions de production des listes électorales dans chacune des 35 000 communes, et dans une moindre mesure par les erreurs de géolocalisation des adresses. Parfois, des électeurs sont rattachés à un autre bureau de vote que celui correspondant à leur domicile. Il arrive  que des communes conservent des bureaux de vote répartis sur une base alphabétique malgré la réforme de 2016 (c’était encore le cas de Fonsorbes, en Haute-Garonne, à la veille de la présidentielle). Ces cas sont marginaux, mais suffisants pour mettre la pagaille dans un programme. 
 
-<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/Exemple_Traitement_Etalab.png" width="1000" />
+<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/IMG/Exemple_Traitement_Etalab.png" width="1000" />
 
 
 Les choix techniques visent donc d’abord à **limiter le nombre d’erreurs et à obtenir un découpage exploitable en visualisation de données**, pour ainsi “s’approcher” d’une réalité électorale. Après tout, il ne faut pas trop exiger d'un découpage qui a été pensé pour fluidifier le déroulement d’un scrutin électoral et pas pour faire de la sociologie électorale. 
@@ -30,7 +30,7 @@ Les choix techniques visent donc d’abord à **limiter le nombre d’erreurs et
 ## La méthode
 **En résumé, il s'agit ici de poser les adresses sur une carte puis à dessiner une limite autour de chaque groupe d’adresses appartenant au même bureau de vote.**
 
-<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/Etapes_Traitement_REU.png" width="1000" />
+<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/IMG/Etapes_Traitement_REU.png" width="1000" />
 
 Dans ce dépôt, vous trouverez un notebook Jupyter, qui fait appel aux librairies [Pandas](https://pandas.pydata.org/), [Geopandas](https://geopandas.org/en/stable/), [Geovoronoi](https://github.com/WZBSocialScienceCenter/geovoronoi), ainsi qu'un fichier "makefile" qui permet d'exécuter des commandes Mapshaper. Cela implique d'installer au préalable [Mapshaper](https://github.com/mbloch/mapshaper/tree/master) en ligne de commande, une librairie javascript que je trouve plus efficace pour certaines opérations.
 
@@ -75,6 +75,6 @@ Bref, ce sont ces listes électorales complètes qui m’ont permis de **cartogr
 
 
 
-<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/Carte_Legislatives_BV_Lyon.png" width="700" />
+<img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/IMG/Carte_Legislatives_BV_Lyon.png" width="700" />
 
 
