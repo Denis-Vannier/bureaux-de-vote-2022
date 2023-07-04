@@ -28,7 +28,7 @@ Les fichiers geojson créés en sortie (un par département) nécessitent malgr�
 Les choix techniques visent donc d’abord à **limiter le nombre d’erreurs et à obtenir un découpage exploitable en visualisation de données**, pour ainsi “s’approcher” d’une réalité électorale. Après tout, il ne faut pas trop exiger d'un découpage qui a été pensé pour fluidifier le déroulement d’un scrutin électoral et pas pour faire de la sociologie électorale. 
 
 ## La méthode
-**En résumé, il s'agit ici de poser les adresses sur une carte puis à dessiner une limite autour de chaque groupe d’adresses appartenant au même bureau de vote.**
+**En résumé, il s'agit ici de poser les adresses sur une carte puis de dessiner une limite autour de chaque groupe d’adresses appartenant au même bureau de vote.**
 
 <img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/IMG/Etapes_Traitement_REU.png" width="1000" />
 
