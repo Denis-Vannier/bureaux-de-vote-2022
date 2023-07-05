@@ -27,6 +27,8 @@ Les fichiers geojson créés en sortie (un par département) nécessitent malgr�
 
 Les choix techniques visent donc d’abord à **limiter le nombre d’erreurs et à obtenir un découpage exploitable en visualisation de données**, pour ainsi “s’approcher” d’une réalité électorale. Après tout, il ne faut pas trop exiger d'un découpage qui a été pensé pour fluidifier le déroulement d’un scrutin électoral et pas pour faire de la sociologie électorale. 
 
+Pour l'instant, ce programme échoue à découper les bureaux de vote de 19 communes, notamment dans les Bouches-du-Rhône (codes Insee : 13061, 13002, 13118, 13051, 13052 et 13119), en Corse (2B311 et 2A141) et d'autres régions (07230, 09123, 10112, 30045, 38364, 42272, 55500, 86134, 97356, 97502). Les points d'adresse correspondants à ces communes sont exportés dans un fichier "adresses_communes_erreurs_BV.csv" afin de procéder au découpage en visuel dans Qgis.
+
 ## La méthode
 **En résumé, il s'agit ici de poser les adresses sur une carte puis de dessiner une limite autour de chaque groupe d’adresses appartenant au même bureau de vote.**
 
