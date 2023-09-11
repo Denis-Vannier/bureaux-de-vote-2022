@@ -15,7 +15,7 @@ Avertissement : Le code est à l'image de mon niveau encore limité en python. T
 ## Pourquoi le REU est nécessaire
 La version intégrale du Répertoire électoral unique contient l’identité (nom, prénom, date et lieu de naissance, nationalité) et l’adresse postale des 48,7 millions d’habitants inscrits sur les listes électorales. Il est alimenté par les communes. Lorsqu’une commune accueille plus d’un millier d’électeurs, il est prévu de les répartir entre plusieurs bureaux de vote, afin de faciliter les opérations électorales. Depuis 2016, cette répartition doit être réalisée selon des critères géographiques. Les maires de chaque commune doivent donc définir un périmètre géographique pour chacun des bureaux. 
 
-Les plus grandes communes, qui disposent d’un service géomatique, ont mis en ligne des fichiers géograqhiques permettant de cartographier facilement ces bureaux. Mais dans l’immense majorité des cas, le périmètre sont décrits sous forme de texte, avec une simple succession d’adresses, voire par un simple tracé au crayon sur un plan en papier. Les listes électorales offrent donc la meilleure meilleure option si l’on veut visualiser ces périmètres. 
+Les plus grandes communes, qui disposent d’un service géomatique, ont mis en ligne des fichiers géographiques permettant de cartographier facilement ces bureaux. Mais dans l’immense majorité des cas, le périmètre sont décrits sous forme de texte, avec une simple succession d’adresses, voire par un simple tracé au crayon sur un plan en papier. Les listes électorales offrent donc la meilleure meilleure option si l’on veut visualiser ces périmètres. 
 <img src="https://github.com/Denis-Vannier/bureaux-de-vote-2022/blob/main/IMG/Exemples_Plans_BV_Mairies.png" width="1000" />
 
 
